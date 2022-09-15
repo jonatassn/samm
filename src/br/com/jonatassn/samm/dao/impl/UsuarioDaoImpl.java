@@ -5,6 +5,7 @@
  */
 package br.com.jonatassn.samm.dao.impl;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -25,7 +26,15 @@ public class UsuarioDaoImpl extends Dao implements UsuarioDao {
 		EntityManager entityManager = getEntityManager();
 		try {
 			entityManager.getTransaction().begin();
-			entityManager.persist(entidade);
+			Calendar agora = Calendar.getInstance();
+			if(entidade.getId() == null) {
+				entidade.setCriadoEm(agora.getTime());
+				entityManager.persist(entidade);
+			}
+			else {
+				entidade.setAlteradoEm(agora.getTime());
+				entityManager.persist(entidade);
+			}
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
