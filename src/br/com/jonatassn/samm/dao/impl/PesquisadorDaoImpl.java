@@ -12,17 +12,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import br.com.jonatassn.samm.dao.Dao;
-import br.com.jonatassn.samm.dao.UsuarioDao;
+import br.com.jonatassn.samm.dao.PesquisadorDao;
+import br.com.jonatassn.samm.model.Pesquisador;
 import br.com.jonatassn.samm.model.Usuario;
 
 /**
  * @author Jonatas.Silveira - Unespar <jonatas.silveira@unespar.edu.br>
  *
  */
-public class UsuarioDaoImpl extends Dao implements UsuarioDao {
+public class PesquisadorDaoImpl extends Dao implements PesquisadorDao {
 
 	@Override
-	public void salvar(Usuario entidade) {
+	public void salvar(Pesquisador entidade) {
 		EntityManager entityManager = getEntityManager();
 		try {
 			entityManager.getTransaction().begin();
@@ -40,23 +41,21 @@ public class UsuarioDaoImpl extends Dao implements UsuarioDao {
 			e.printStackTrace();
 			entityManager.getTransaction().rollback();
 		}
-		
 	}
 
 	@Override
-	public Usuario localizar(Long id) {
+	public Pesquisador localizar(Long id) {
 		EntityManager entityManager = getEntityManager();
-		Usuario usuario = entityManager.find(Usuario.class, id);
-		return usuario;
+		Pesquisador pesquisador = entityManager.find(Pesquisador.class, id);
+		return pesquisador;
 	}
 
 	@Override
-	public List<Usuario> listarTodos() {
+	public List<Pesquisador> listarTodos() {
 		EntityManager entityManager = getEntityManager();
-		TypedQuery<Usuario> consulta = entityManager.createQuery(
-				"SELECT u FROM Usuario u", Usuario.class);
-		List<Usuario> lista = consulta.getResultList();
-		return lista;
+		TypedQuery<Pesquisador> consulta = entityManager.createQuery(
+				"SELECT p FROM Pesquisador p", Pesquisador.class);
+		return consulta.getResultList();
 	}
 
 }
