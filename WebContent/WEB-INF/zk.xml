@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-	Created by ZK Studio
--->
-
 <zk>
-	<device-config>
-		<device-type>ajax</device-type>
-		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
-	</device-config>
+    <device-config>
+        <device-type>ajax</device-type>
+        <timeout-uri>/</timeout-uri>
+    </device-config>
+    <session-config>
+        <timer-keep-alive>true</timer-keep-alive>
+    </session-config>
+    <system-config>
+        <max-upload-size>52428800</max-upload-size>
+    </system-config>
+    <library-property>
+        <name>org.zkoss.theme.preferred</name>
+        <value>iceblue_c</value><!-- silvertail, breeze, sapphire, iceblue_c -->
+        <!-- Centraliza a Janela de Progresso -->
+        <name>org.zkoss.zul.progressbox.position</name>
+        <value>center</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.web.classWebResource.cache</name>
+        <value>false</value>
+    </library-property>
+    
+    <!-- Previne uso de Event Thread para melhor performance -->
+    <system-config>
+        <disable-event-thread>false</disable-event-thread>
+    </system-config>
+    
+    <!-- Posição do loading -->
+    <library-property>
+        <name>org.zkoss.zul.progressbox.position</name>
+        <value>center</value>
+    </library-property>
+    
+    <!-- Mostrar a versão do ZK no código-fonte -->
+    <library-property>
+        <name>org.zkoss.zk.ui.versionInfo.enabled</name>
+        <value>true</value>
+    </library-property>   
+    
+    <!-- Janela customizada de erro -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>    
+        <location>/zk_custom/errorPopup.zul</location>    
+    </error-page>
+    
+    <!-- Janela customizada de timeout -->
+    <session-config>
+        <device-type>ajax</device-type>    
+        <timeout-uri>/zk_custom/timeoutPopup.zul</timeout-uri>    
+    </session-config>
+    
+    <!-- Habilita sessão serializável -->
+    <system-config>
+        <ui-factory-class>org.zkoss.zk.ui.http.SerializableUiFactory</ui-factory-class>
+    </system-config>
+    
+    <!-- Importa componentes do ZK customizados -->
+    <language-config>
+        <addon-uri>/WEB-INF/lang-addon.xml</addon-uri>
+    </language-config>
 </zk>

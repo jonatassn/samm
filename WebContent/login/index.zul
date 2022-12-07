@@ -1,0 +1,22 @@
+<?page title="Página Login" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/archtectui.css"?>
+<?link rel="stylesheet" type="text/css" href="/css/zkbootstrap.css"?>
+<zk>
+	<div class="container" viewModel="@id('vm') @init('br.com.jonatassn.samm.controller.LoginVM')">
+		
+			<div class="row">
+				<div class="form-group">
+					<label style="color: red;" value="@load(vm.msgErro)" />
+					<div class="col-sm-3 py-1">
+						<textbox class="form-control" placeholder="E-mail" maxlength="255" value="@save(vm.email)"/>
+						<textbox class="form-control" placeholder="Senha" type="password" maxlength="40" value="@save(vm.password)"/>
+						<div align="center">
+							<button class="btn btn-sm btn-success" label="Entrar" onClick="@command('entrar')"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+	</div>
+</zk>

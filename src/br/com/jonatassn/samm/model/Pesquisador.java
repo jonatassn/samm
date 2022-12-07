@@ -1,6 +1,5 @@
 /*
- * Universidade Estadual do Paraná - Unespar
- * Núcleo de Tecnologia da Informação - NTI
+ * Sistema de Auxílio ao Módulo de Monitoramento
  * Copyright (c) 2022 - Todos os direitos reservados.
  */
 package br.com.jonatassn.samm.model;
@@ -9,6 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,12 +20,14 @@ import javax.persistence.TemporalType;
 
 import lombok.Data;
 
+
 /**
- * @author Jonatas.Silveira - Unespar <jonatas.silveira@unespar.edu.br>
+ * @author Jonatas Silveira - <jonatassn.com.br>
  *
  */
 @Data
-@Table(name="tb_pesquisador", schema="samm")
+@Table(name="tb_pesquisadores", schema="samm")
+@Entity
 public class Pesquisador implements Serializable{
 	public static final long serialVersionUID = 1L;
 	
@@ -35,29 +37,30 @@ public class Pesquisador implements Serializable{
 	private Long id;
 	
 	@OneToOne
-	@JoinColumn(name="cd_usuario")
+	@JoinColumn(name="cd_usuario", nullable=false)
 	private Usuario usuario;
 	
-	@Column(name="nm_pesquisador")
+	@Column(name="nm_pesquisador", nullable=false)
 	private String nome;
 	
-	@Column(name="sbnm_pesquisador")
+	@Column(name="sobrenm_pesquisador", nullable=false)
 	private String sobrenome;
 	
-	@Column(name="cpf_pesquisador")
+	@Column(name="cpf_pesquisador", nullable=false)
 	private String cpf;
 	
 	@Column(name="url_externa")
 	private String urlExterna;
 	
-	@Column(name="st_ativo")
+	@Column(name="st_ativo", nullable=false)
 	private Boolean status;
 	
-	@Column(name="criado_em")
+	@Column(name="criado_em", nullable=false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date criadoEm;
 	
 	@Column(name="alterado_em")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date alteradoEm;
+
 }

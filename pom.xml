@@ -7,14 +7,27 @@
   
   <description>Sistema de Auxílio ao Módulo de Monitoramento</description>
   
-  <repositories>
-  	<repository>
-		<id>ZK CE</id>
-		<name>ZK CE Repository</name>
-		<url>https://mavensync.zkoss.org/maven2</url>
-	</repository>
-  </repositories>
   
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
   	<!-- Gson (biblioteca de manipulação JSON) -->
     <dependency>
@@ -147,76 +160,9 @@
 	<dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
-		<version>1.18.16</version>
+		<version>1.18.24</version>
 		<scope>provided</scope>
 	</dependency>
-
-	<dependency>
-		<groupId>org.zkoss.zk</groupId>
-		<artifactId>zkbind</artifactId>
-		<version>9.5.0.3</version>
-	</dependency>
-	<dependency>
-		<groupId>org.zkoss.zk</groupId>
-		<artifactId>zul</artifactId>
-		<version>9.5.0.3</version>
-	</dependency>
-	<dependency>
-		<groupId>org.zkoss.zk</groupId>
-		<artifactId>zkplus</artifactId>
-		<version>9.5.0.3</version>
-	</dependency>
-	<dependency>
-		<groupId>org.zkoss.zk</groupId>
-		<artifactId>zhtml</artifactId>
-		<version>9.5.0.3</version>
-	</dependency>
-		
-	<!-- API, java.xml.bind module -->
-	<dependency>
-	    <groupId>jakarta.xml.bind</groupId>
-	    <artifactId>jakarta.xml.bind-api</artifactId>
-	    <version>2.3.2</version>
-	</dependency>
-		
-	<!-- Runtime, com.sun.xml.bind module -->		
-
-    <dependency>
-        <groupId>org.zkoss.calendar</groupId>
-        <artifactId>calendar</artifactId>
-        <version>2.1.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.zkoss.zkforge</groupId>
-        <artifactId>ckez</artifactId>
-        <version>3.6.0.0</version>
-    </dependency>
-        
-    <dependency>
-	    <groupId>com.sun.xml.fastinfoset</groupId>
-	    <artifactId>FastInfoset</artifactId>
-	    <version>1.2.18</version>
-	</dependency>
+	
   </dependencies>
-  
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.0.0</version>
-        <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

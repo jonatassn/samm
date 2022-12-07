@@ -1,6 +1,5 @@
 /*
- * Universidade Estadual do Paraná - Unespar
- * Núcleo de Tecnologia da Informação - NTI
+ * Sistema de Auxílio ao Módulo de Monitoramento
  * Copyright (c) 2022 - Todos os direitos reservados.
  */
 package br.com.jonatassn.samm.dao.impl;
@@ -14,10 +13,10 @@ import javax.persistence.TypedQuery;
 import br.com.jonatassn.samm.dao.Dao;
 import br.com.jonatassn.samm.dao.PesquisadorDao;
 import br.com.jonatassn.samm.model.Pesquisador;
-import br.com.jonatassn.samm.model.Usuario;
+
 
 /**
- * @author Jonatas.Silveira - Unespar <jonatas.silveira@unespar.edu.br>
+ * @author Jonatas Silveira - <jonatassn.com.br>
  *
  */
 public class PesquisadorDaoImpl extends Dao implements PesquisadorDao {

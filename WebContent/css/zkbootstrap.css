@@ -1,0 +1,906 @@
+/* BODY - REMOVE O PADDING DA PÃ�GINA QUE O ZK COLOCA E COLOCA O TAMANHO DA FONTE AO PADRÃƒO ZK */
+body {
+    padding: 0px;
+    /*font-size: 12px!important;*/
+    font-size: .88rem!important; /* padrÃ£o ArchtectUI */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CSS para melhorar o ZK
+ * 
+ * Alguns componentes do ZK tem um visual nÃ£o muito legal, como sombra nos botÃµes.
+ * Aqui tambÃ©m estÃ¡ ensinando como vocÃª pode alterar o comportamento do visual do Grid.
+ * Personalizamos tambÃ©m o loading do ZK, travando a tela com um fundo escuro.
+ */
+
+/* ZK - LABELS - remove os padrÃµes do ZK para manter o do bootstrap */
+.z-label, .z-radio-content, .z-checkbox-content, .z-loading, .z-caption {
+    font-size: inherit!important;
+    line-height: inherit; 
+    font-family: inherit;
+    font-weight: inherit;
+    /*color: #495057;  COR DAS LETRAS NO LABEL, GRID , PADRÃƒO ARCHTECTUI*/
+}
+
+/* ZK - WINDOW - remove o padding e cor do Window */
+.z-window-content{
+    padding: 0px!important;
+    color: inherit;
+    background-color: #f1f4f6!important; /*essa cor Ã© para manter o padrÃ£o do ArchtectUI*/
+}
+
+.z-window-modal .z-window-content{
+    background-color: #ffffff!important; /*essa cor Ã© para os Alerts Popup*/
+}
+
+.popup .z-window-content{
+    padding: 1rem!important;
+}
+
+.fundobranco .z-window-content{
+    background-color: #ffffff!important;
+}
+
+/* ZK - MODAL - CORRIGIDO FUNDO DO ALERT PARA ALTURA 100% */
+.z-temp, .z-modal-mask {
+    position:fixed;
+}
+.z-modal-mask {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.8;
+    filter: alpha(opacity = 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* ZK - BUTTON - TIRAR A SOMBRA DO BOTÃƒO DO TEMA ICEBLUE */
+.z-button {
+    box-shadow: none !important;
+    line-height: unset;
+}
+
+/* ZK - BUTTON - CORRIGE ALINHAMENTO DO Ã�CONE FONTAWOSOME NO BOTÃƒO */
+.icon-only {
+    background-color: transparent !important; 
+    border-color: transparent !important; 
+    padding: 0px !important; 
+    border: 0px !important; 
+    opacity: 1 !important;
+}
+
+/* ZK - BUTTON - MELHORIA DE TAMANHOS DO FONTAWESOME */
+.fa-1-1x {
+    font-size: 1.1em !important;
+}
+.fa-1-2x {
+    font-size: 1.2em !important;
+}
+.fa-1-3x {
+    font-size: 1.3em !important;
+}
+.fa-1-4x {
+    font-size: 1.4em !important;
+}
+.fa-1-5x {
+    font-size: 1.5em !important;
+}
+.fa-1-6x {
+    font-size: 1.6em !important;
+}
+.fa-1-7x {
+    font-size: 1.7em !important;
+}
+.fa-1-8x {
+    font-size: 1.8em !important;
+}
+.fa-1-9x {
+    font-size: 1.9em !important;
+}
+.fa-2x {
+    font-size: 2em !important;
+}
+.fa-3x {
+    font-size: 3em !important;
+}
+.fa-4x {
+    font-size: 4em !important;
+}
+.fa-5x {
+    font-size: 5em !important;
+}
+
+
+
+/* ZK - LOADING - DEIXANDO EM TELA CHEIA */
+.z-loading {
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: box;
+    box-pack: center;
+    box-align: center;
+    width: 100% !important;
+    width: intrinsic !important;
+    min-width: -moz-available !important;          
+    width: -webkit-fill-available !important;  
+    width: fill-available !important;
+    height: 100% !important;
+    height: intrinsic !important;
+    min-height: -moz-available !important;
+    height: -webkit-fill-available !important;
+    height: fill-available !important;    
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.z-loading-indicator {
+    border: 1px solid #A0A0A0 !important;
+}
+
+/* ZK - LAYOUT - REMOVENDO ESPAÃ‡O EXTRA*/
+.z-north-body, .z-south-body, .z-west-body, .z-center-body, .z-east-body {
+    padding: 0px !important;
+}
+
+/* ZK - WINDOW - MELHORANDO ALINHAMENTO DO TEXTO DO TÃ�TULO DA JANELA */
+.z-window-header {
+    padding: 3px 5px 5px !important;
+}
+
+/* ZK - WINDOW - ALTERANDO COR DE FUNDO */
+.z-window {
+    background-color: #ffffff; /* original #f9fcff; */
+}
+
+/* ZK - CAPTION - COLOCANDO Ã�CONE A DIREITA*/
+.z-caption.iconeDireita .z-caption-content {
+    width: 100%;
+    position: relative;
+}
+
+.z-caption.iconeDireita .z-caption-content i {
+    position: absolute;
+    right: 0px;
+    font-size: 16px;
+}
+
+/* ZK - MENU - CORRIGINDO ALINHAMENTO DO Ã�CONE */
+.z-menu-content i, .z-menuitem-content i {
+    vertical-align: unset !important;
+}
+
+/* ZK - BANDBOX */
+.z-bandbox-popup{
+    width: unset!important;
+}
+.z-bandpopup .z-listbox{
+    width: 100%!important;
+    border: 0px!important;
+    padding: 0px!important;
+}
+.z-bandbox{
+    position: relative;
+    height: auto;
+    display: flex;
+}
+.z-bandbox-input{
+    height: auto;
+    transition: all .2s;
+    display: block;
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    background: #FFFFFF;
+    overflow: visible;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+    font: 400 13.3333px Arial;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+.z-bandbox-button{
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    position: relative;
+    margin-left: -1px;
+    z-index: 2;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #6c757d;
+    background-image: none;
+    overflow: visible;
+    border-color: #6c757d;
+    margin: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+    height: unset;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #fff;
+}
+.z-bandbox-icon{
+    vertical-align: middle;
+}
+
+/* ZK - TABBOX */
+.z-tabbox{
+    border: 0px;
+}
+.z-tabpanel{
+    border: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.z-tab{
+    padding: 15px;
+    transition: all .2s;
+}
+.z-tab-selected .z-tab-text {
+    color: #3f6ad8;
+}
+.z-tab-selected {
+    border-bottom: 2px solid #3f6ad8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CSS para melhorar o Bootstrap
+ * 
+ * Alguns elementos faltantes no bootstrap como alertas apenas com borda.
+ * Temos tambÃ©m botÃµes extra-small para o caso de ficar melhor com os elementos pequenos do ZK.
+ * Foram ajustados alguns itens para adaptar ao modeo ArchtectUI
+ */
+
+/* BOOTSTRAP - O ARCHTECTUI TEM TAMANHO DE FONTE MENOR PRO BOTÃƒO */
+.btn {
+    font-size: .88rem;
+}
+
+/* BOOTSTRAP - CSS PARA BOTÃƒO EXTRA-SMALL QUE NÃƒO TEM NO BOOTSTRAP 4 */
+.btn-group-xs > .btn, .btn-xs {
+    padding  : .25rem .4rem !important;
+    font-size  : 12px !important;
+    line-height  : .5 !important;
+    border-radius : .2rem !important;
+}
+
+/* BOOTSTRAP - CRIADO CSS PARA BOTÃƒO ESTILO CLOSE  QUE NÃƒO TEM NO BOOTSTRAP */
+.btn-close {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #000 !important;
+    text-shadow: 0 1px 0 #fff !important;
+    opacity: .5 !important;
+    background-color: transparent !important;
+}
+
+/* BOOTSTRAP - CORREÃ‡ÃƒO DA FONTE E ESPAÃ‡AMENTO DO JUMBOTRON */
+.jumbotron {
+    font-size: 10px;
+    padding: 2rem 2rem !important;
+    margin-bottom: 0px !important;
+}
+
+/* BOOTSTRAP - OPÃ‡ÃƒO EXTRA DE ALERTA */
+.alert-warning-light{
+    border-color: #ffac00!important;
+}
+.alert-danger-light{
+    border-color: #f5c6cb!important;
+}
+.alert-info-light{
+    border-color: #bee5eb!important;
+}
+.alert-success-light{
+    border-color: #c3e6cb!important;
+}
+
+/* BOOTSTRAP - COR DOS BOTÃ•ES QUANDO ESTÃƒO COM FOCO */
+.btn-link:hover{
+    background-color: unset;
+}
+.btn-primary:focus{
+    background-color: #2955c8;
+}
+.btn-secondary:focus{
+    background-color: #5a6268;
+}
+.btn-success:focus{
+    background-color: #31a66a;
+}
+.btn-info:focus{
+    background-color: #0098ef;
+}
+.btn-warning:focus{
+    background-color: #eca909;
+}
+.btn-danger:focus{
+    background-color: #b81f44;
+}
+.btn-light:focus{
+    color: #212529;
+    background-color: #dbdbdb;
+}
+.btn-dark:focus{
+    background-color: #23272b;
+}
+.btn-link:focus{
+    color: #3f6ad8;
+    border-color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CSS para adaptar determinados elementos do ZK para aceitar o Bootstrap
+ * 
+ * Alguns elementos do ZK nÃ£o utilizam as tags padrÃµes do HTML. Com estes ajustes
+ * fazemos com que esses elementos personalizados do ZK fiquem com o mesmo estilo que o Bootstrap
+ * aplica nos componentes correspondentes ao que tem HTML puro.
+ */
+
+/* BOOTSTRAPANDO O ZK - CORREÃ‡ÃƒO DO TAMANHO DA FONTE DOS FORMULÃ�RIOS - PADRÃƒO BOOTSTRAP Ã‰ 1rem, REBAIXADO AQUI PARA .88rem */
+.form-control, .input-sm, .input-md, .input-lg {
+    font-size: .88rem !important;
+}
+
+z-combobox-input, .z-bandbox-input, .z-datebox-input, .z-timebox-input, .z-spinner-input, .z-doublespinner-input {
+    font-size: .88rem !important;
+}
+
+/* Ajustando altura do combobox. O ArchtectUI Ã© maior, deixando padÃ£o Boostrap */
+.form-control{
+    height: calc(1.5em + .75rem + 2px);
+}
+
+.z-textbox, .z-decimalbox, .z-intbox, .z-longbox, .z-doublebox {
+    /*min-height: 30px!important;
+    height: unset;*/
+}
+
+/* BOOTSTRAPANDO O ZK - READONLY - CORRIGINGO COR DA FONTE PARA FICAR IGUAL AO BOOTSTRAP */
+.z-textbox[readonly], .z-decimalbox[readonly], .z-intbox[readonly], .z-longbox[readonly], .z-doublebox[readonly] {
+    color: #495057;
+}
+
+/* BOOTSTRAPANDO O ZK - CORREÃ‡ÃƒO DO RADIO */
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 4px 2px 4px !important;
+}
+
+.z-radio-content {
+    margin-bottom: 0 !important;
+}
+
+/* BOOTSTRAPANDO O ZK - COMBOBOX - ADICIONANDO ESTILO */
+.z-combobox {
+    height: calc(1.5em + .75rem + 2px) !important;
+}
+.z-combobox-input {
+    padding: 0.375rem 0.75rem;
+    font-size: .88rem!important;
+    height: calc(1.5em + .75rem + 2px) !important;
+    border: 1px solid #d9d9d9 !important;
+    margin: 0 !important;
+    line-height: 14px !important;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.z-combobox-input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.z-combobox-input:disabled {
+    color: #acacac !important;
+    background: #e9ecef !important;
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+    cursor: not-allowed !important;
+}
+
+.z-combobox-input:focus+.z-combobox-button{
+    border-left:1px solid #0093F9
+}
+
+.z-combobox-button{
+    font-size:18px;
+    color:rgba(0,0,0,0.9);
+    display:inline-block;
+    position:absolute;
+    top:0;
+    right:0;
+    min-width:24px;
+    height:35px;
+    border:1px solid #D9D9D9;
+    -webkit-border-radius:0 4px 4px 0;
+    -moz-border-radius:0 4px 4px 0;
+    -o-border-radius:0 4px 4px 0;
+    -ms-border-radius:0 4px 4px 0;
+    border-radius:0 4px 4px 0;
+    padding:2px;
+    line-height:22px;
+    background:#FFFFFF;
+    text-align:center;
+    vertical-align:middle;
+    overflow:hidden;
+    cursor:pointer
+}
+
+.z-combobox-button:hover{
+    border-color:#7ac8ff;
+    background:#e0f2ff
+}
+.z-combobox-button:active{
+    color:#FFFFFF;
+    border-color:#0064ED;
+    background-color:#0093F9
+}
+
+.z-combobox-popup {
+    max-height: 200px !important;
+}
+
+/* BOOTSTRAPANDO O ZK EE - CHOSENBOX - ADICIONANDO ESTILO */
+.z-chosenbox {
+    height: auto;
+}
+
+.z-chosenbox-input {
+    font-size: .88rem !important;
+    padding: 0px;
+    /*height: 20px !important;*/
+    /*line-height: 1.5;*/
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.z-chosenbox-item{
+    display: inline-flex;
+    align-items: center;
+    margin: 1px 2px 0px 0px !important;
+    border: 1px solid #ced4da;
+    background-color: #dee2e6;
+}
+
+.z-chosenbox-item-content{
+    color: #495057 !important;
+}
+
+.z-chosenbox-button{
+    display: inline-flex;
+    align-items: center;
+    margin: 2px 0px 0px 0px !important;
+    color: #495057 !important;
+}
+
+.z-chosenbox-focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.z-chosenbox-disabled {
+    color: #acacac !important;
+    background: #e9ecef !important;
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+    cursor: not-allowed !important;
+}
+
+.z-chosenbox-select {
+    font-size: .88rem!important;
+}
+
+/* BOOTSTRAPANDO O ZK - SELECT - ADICIONANDO ESTILO */
+.z-select, .z-selectbox {
+    /*height: 30px !important;*/
+    /*padding: 3px 3px;*/
+    border: 1px solid #ced4da !important;
+    margin: 0 !important;
+    line-height: 14px !important;
+    background: #fff !important;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -o-border-radius: 4px 4px 4px 4px;
+    -ms-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px; 
+}
+.z-select:disabled, .z-selectbox:disabled {
+    color: #acacac !important;
+    background: #e9ecef !important;
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+    cursor: not-allowed !important;
+}
+
+/* BOOTSTRAPANDO O ZK - CHECKBOX - ADICIONANDO ESTILO */
+input[type="checkbox"]{
+    border: 1px solid #ced4da!important;
+}
+input[type="checkbox"]:checked {
+    background-color: #3f6ad8!important;
+}
+
+/* BOOTSTRAPANDO O ZK - DATE - ADICIONANDO ESTILO */
+.z-datebox {
+    height: calc(1.5em + .75rem + 2px) !important;
+}
+.z-datebox-input {
+    height: calc(1.5em + .75rem + 2px) !important;
+    border: 1px solid #d9d9d9 !important;
+    margin: 0 !important;
+    line-height: 14px !important;
+    background: #fff !important;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    -o-border-radius: 4px 0 0 4px;
+    -ms-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px; 
+}
+.z-datebox-button {
+    height: calc(1.5em + .50rem) !important;
+    margin-left: -15px;
+    width: 40px;
+    -webkit-border-top-right-radius: 4px !important;
+    -webkit-border-bottom-right-radius: 4px !important;
+    -moz-border-radius-topright: 4px !important;
+    -moz-border-radius-bottomright: 4px !important;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    -webkit-border-top-left-radius: 0px !important;
+    -webkit-border-bottom-left-radius: 0px !important;
+    -moz-border-radius-topleft: 0px !important;
+    -moz-border-radius-bottomleft: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.z-datebox-input  {
+    color: #495057;
+    padding: 0.375rem 0.75rem;
+}
+.z-datebox-icon {
+    padding-top: 6px;
+}
+.z-datebox-input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* BOOTSTRAPANDO O ZK - GROUPBOX - ADICIONANDO ESTILO IGUAL O PANEL DO BOOTSTRAP */
+
+.z-groupbox-header{
+    border-color: #ddd!important;
+    border-top-right-radius:  4px;
+    border-top-left-radius: 4px;
+}
+
+.z-groupbox-content{
+    border-color: #ddd!important;
+    border-bottom-right-radius:  4px;
+    border-bottom-left-radius: 4px;
+}
+
+/*
+ * CSS personalizado os grid (tabelas) do ZK para se comportar semelhante ao do Bootstrap
+ * 
+ * O grid tem um visual bem caracterÃ­stico do ZK, com o header em cor azul e bem estreito.
+ * Com isso o grid ficarÃ¡ igual o bootstrap, clean, sem poluir o visual.
+ */
+
+/* BOOTSTRAPANDO O ZK - GRID - FONTE DO HEADER DA TABELA */
+.z-listheader-content {
+    font-size: .88rem;
+}
+/* BOOTSTRAPANDO O ZK - GRID - FONTE DAS LINHAS DA TABELA */
+.z-listcell-content, .z-listgroup-content, .z-listgroupfoot-content, .z-listfooter-content, .z-column-content {
+    font-size: .88rem;
+    color: #495057;
+}
+
+/* BOOTSTRAPANDO O ZK - GRID - CORES DA ORDENAÃ‡ÃƒO NO HEADER */
+.z-column-sort .z-column-content:active {
+    background: #fffff!important;
+}
+
+.z-column-sort .z-column-content:hover {
+    background: #e0f3ff;
+    color: #495057;
+}
+
+.z-column-sort .z-column-sorticon {
+    color: #495057;
+}
+
+/* BOOTSTRAPANDO O ZK EE - GRID DATAILS - DIMINUINDO PADGIND DA FLECHA DETALHES */
+.z-row .z-detail-outer {
+    padding: 3px 0px !important;
+}
+
+/* BOOTSTRAPANDO O ZK - LIST */
+.z-listitem.z-listitem-selected>.z-listcell>.z-listcell-content {
+
+}
+
+/*BOOTSTRAPANDO O - GRID - ESTILO SEMELHANTE AO BOOTSTRAP*/
+.z-grid {
+    border: 0px;
+}
+.z-grid-header{
+    background: white;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.z-grid-paging-bottom {
+    border-top: 1px solid #dee2e6;
+}
+.z-grid-header-border{
+    border-bottom: 0px solid #dee2e6;
+}
+.z-column {
+    background-color: white;
+    border-left: 0px solid #dee2e6;
+    border-bottom: 0px solid #dee2e6;
+}
+.z-column-visited .z-column-button {
+    background: #dee2e6;
+}
+.z-column-content {
+    color: inherit;
+    font-weight: bold;
+}
+.z-column-content, .z-row-content, .z-group-content, .z-groupfoot-content, .z-footer-content, .z-auxheader-content {
+    font-size: .88rem;
+}
+.z-columns-bar {
+    background: white;
+    border-left: 0px solid #dee2e6;
+    border-bottom: 0px solid #dee2e6;
+}
+.z-column-button {
+    color: inherit;
+    -webkit-box-shadow: inset 0px 0 #dee2e6;
+    -moz-box-shadow: inset 0px 0 #dee2e6;
+    -o-box-shadow: inset 0px 0 #dee2e6;
+    -ms-box-shadow: inset 0px 0 #dee2e6;
+    box-shadow: inset 0px 0 #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+
+.z-column-content, .z-row-content, .z-group-content, .z-groupfoot-content, .z-footer-content, .z-auxheader-content {
+    line-height: unset!important;
+}
+
+.z-paging {
+    background-color: white!important;
+}
+
+.z-paging-info{
+    padding: 2px 0!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CSS personalizado os formulÃ¡rios do ZK para se comportar semelhante ao do Bootstrap
+ * 
+ * Para criar formulÃ¡rios com Label e Input, utilize as classes abaixo. Com isso vocÃª
+ * conseguirÃ¡ deixar o formulÃ¡rio responsivo mais facilmente.
+ */
+
+/* FORMULÃ�RIO - CSS PARA FORMULARIO HTML */
+.form {  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.form-group  {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.form-label{
+    display: inline-block;
+    font-weight: 700;
+}
+.label-right{
+    text-align: right;
+}
+@media(max-width:575px){
+    .label-right{
+        text-align: left;
+    }
+}
+span.required:after {
+    content: " âƒ°"; 
+    color: #721c24;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * CSS personalizado o ZK para ter o estilo do template ArchtectUI
+ * 
+ */
+
+/* Windows - deixa borda da janela arredondada para melhorar os cards e sem padding */
+.z-window-noborder {
+    border: 0;
+    -webkit-border-radius: 0.25em;
+    -moz-border-radius: 0.25em;
+    -o-border-radius: 0.25em;
+    -ms-border-radius: 0.25em;
+    border-radius: 0.25em;
+    padding: 0px;
+}
+
+/* Links - do menu remove estilo do zk pois tem estilo prÃ³prio. Remove tamanho menor. */
+.nav-menu.z-a:visited {
+    color: unset; 
+}
+.nav-menu.z-a:hover {
+    color:#3f6ad8; 
+}
+.nav-menu.z-a {
+    font-size: unset; 
+}
+.nav-menu.z-a {
+    font-family: unset;
+    font-size: unset;
+    color: #495057; /* adicionado cor mais escura menu. original #6c757d;*/ 
+}
+.z-a {  
+    font-size: unset;
+}
+
+/*
+ * CSS fix do ArchtectUI para funcionar com windows do ZK
+ * 
+ */
+.app-theme-white .app-sidebar *:not(a):not(span):not(.ps__rail-x):not(.ps__rail-y):not(.ps__thumb-x):not(.ps__thumb-y) {
+    background: unset!important;
+}
+
+/*
+ * CSS fix do ArchtectUI corrigir cor do menu ativo
+ * 
+ */
+.vertical-nav-menu li a.mm-active {
+    color: #3f6ad8!important;
+}
+
+/*
+ * CSS fix do ArchtectUI corrigir altura do botÃ£o do input-group
+ * 
+ */
+.input-group-prepend, .input-group-append {
+    display: unset;
+}
+
+.centro {
+	text-align: center;
+}
+
+.direita{
+	text-align: right;
+}
+
+.bd {
+	font-weight: bold;
+}
+
+.nome-titulo {
+	color: #23549e;
+	font-size: 2em;
+	font-weight: 700;
+}

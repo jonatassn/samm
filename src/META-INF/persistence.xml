@@ -12,7 +12,7 @@
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/samm_dev" />
             <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="password" />
+            <property name="javax.persistence.jdbc.password" value="passworda" />
             <property name="connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" />
 	        <property name="hibernate.c3p0.min_size" value="5" />
 	        <property name="hibernate.c3p0.max_size" value="10" />
@@ -21,29 +21,10 @@
 	    	<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update" />
-            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="false" />
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="DS-SAMM" transaction-type="RESOURCE_LOCAL">
-    	<exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <properties>
-        	<property name="javax.persistence.provider" value="org.hibernate.jpa.HibernatePersistenceProvider"/>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://jonatassn.com.br:5432/samm" />
-            <property name="javax.persistence.jdbc.user" value="sammuser" />
-            <property name="javax.persistence.jdbc.password" value="Fjaha7#1Kl1" />
-            <property name="connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" />
-	        <property name="hibernate.c3p0.min_size" value="5" />
-	        <property name="hibernate.c3p0.max_size" value="10" />
-	        <property name="hibernate.c3p0.timeout" value="180" />
-	        <property name="hibernate.c3p0.idle_test_period" value="100" />
-	    	<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-            <property name="hibernate.show_sql" value="false" />
-            <property name="hibernate.format_sql" value="false" />
-        </properties>
-    </persistence-unit>
+    
 </persistence>
