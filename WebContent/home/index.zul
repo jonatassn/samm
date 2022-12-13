@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="br.com.jonatassn.samm.service.AuthenticationInit"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:n="native">
+    
+    <div class="jumbotron"  >
+        <div class="container">
+            <n:h1 class="display-4"><label value="SAMM" /></n:h1>
+            <n:p class="lead"><label value="Sistema de Auxílio ao Módulo de Monitoramento" /></n:p>
+        </div>
+    </div>
+    
+</zk>

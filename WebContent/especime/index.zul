@@ -1,0 +1,65 @@
+<?page title="Usu�rios" contentType="text/html;charset=UTF-8"?>
+<?init class="br.com.jonatassn.samm.service.AuthenticationInit" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:n="native" >
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <n:i class="fa fa-users">
+                    </n:i>
+                </div>
+                <label value="Especimes" />
+            </div>
+        </div>
+    </div> 
+    <window viewModel="@id('vm') @init('br.com.jonatassn.samm.controller.especime.EspecimeIndexVM')">
+    	<div class="d-flex justify-content-between">
+            <div class="form-group input-group col-sm-10 col-md-10 col-lg-8 pl-0">
+                <div class="input-group col-sm-4">
+                   <textbox value="@bind(vm.filtroBusca)" class="form-control"  placeholder="Digite a busca" onOK="@command('buscar')"/>       
+                    <div class="input-group-append">
+                        <button label="" class="btn btn-light" iconSclass="z-icon-search" onClick="@command('buscar')"  />
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <button label="Novo" iconSclass="z-icon-plus" class="btn btn-sm btn-success" onClick="@command('novoEspecime')" />
+            </div>
+        </div>
+        
+        <div class="main-card mb-3 card no-shadow"> 
+            <div class="card-body"> 
+                <n:h5 class="card-title">Especimes Cadastradas</n:h5>
+                <div class="form-group form-group-mb-05"> 
+                    <grid model="@load(vm.especimes)" mold="paging" height="750" pageSize="10" emptyMessage = "Nenhum usuário encontrado">
+                        <columns sizable="true">
+                            <column hflex="2" label="Nome" sort="auto(nome)" align="center" />
+                            <column hflex="1" label="Idade" sort="auto(idade)" align="center" />
+                            <column hflex="1" label="Sexo" sort="auto(sexo)" align="center" />
+                            <column hflex="3" label="Info Biométrica" sort="auto(informacoesBiometricas)" align="center" />
+                            <column hflex="2" label="Pesquisador" sort="auto(pesquisador.nome)" align="center" />
+                            <column hflex="2" label="Tag" sort="auto(tag.codigoHexadecimal)" align="center" />
+                            <column hflex="1" label="Ações" align="right" />
+                        </columns>
+                        <template name="model" var="especime" >
+                            <row >
+                                <label value="@load(especime.nome)" />
+                                <label value="@load(especime.idade)" />
+                                <label value="@load(especime.sexo)" />
+                                <label value="@load(especime.informacoesBiometricas)" />
+                                <label value="@load(especime.pesquisador.nome)" />
+                                <label value="@load(especime.tag.codigoHexadecimal)" />
+                                <div>
+                                	<button sclass="btn btn-sm btn-info" iconSclass="z-icon-pencil"  tooltip="Editar" onClick="@command('editarEspecime', especime=especime)"/>
+                                	<button sclass="btn btn-sm btn-success" iconSclass="z-icon-check"  tooltip="Ativar" onClick="@command('ativarEspecime', especime=especime)" visible="${!especime.isAtivo }"/>
+                                </div>
+                            </row>
+                        </template>
+                    </grid>         
+                </div>
+            </div>
+        </div> 
+    </window>     
+	
+</zk>

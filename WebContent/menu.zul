@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/helper.css"?>
+<?link rel="stylesheet" type="text/css" href="/css/pe-icon-7-stroke.css"?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:n="native" xmlns:w="client">
+    <window id="janelaMenu" use="br.com.jonatassn.samm.controller.MenuController">
+        <div class="scrollbar-sidebar">
+            <div id="sidebar" class="app-sidebar__inner">
+                <n:ul class="vertical-nav-menu">
+                    
+                    <n:li class="app-sidebar__heading">MENU</n:li>
+                    <div id="divUsuarios">
+                    	<n:li>
+	                        <a href="usuario/index.zul"
+	                           class="nav-menu"
+	                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+	                           onClick="janelaMenu.selecionar(self)">
+	                            <n:i class="metismenu-icon fa fa-users"/>
+	                            <label id="" value="Usuários"/>
+	                        </a>
+                   		</n:li>
+                    </div>
+                    <div id="divPesquisadores">
+                    	<n:li>
+	                        <a href="pesquisador/index.zul"
+	                           class="nav-menu"
+	                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+	                           onClick="janelaMenu.selecionar(self)">
+	                            <n:i class="metismenu-icon fa fa-flask"/>
+	                            <label id="" value="Pesquisadores"/>
+	                        </a>
+                    	</n:li>
+                    </div>
+                    
+                    <n:li>
+                        <a href="tag/index.zul"
+                           class="nav-menu"
+                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+                           onClick="janelaMenu.selecionar(self)">
+                            <n:i class="metismenu-icon fa fa-tags"/>
+                            <label id="" value="Tags"/>
+                        </a>
+                    </n:li>
+                    <n:li>
+                        <a href="especime/index.zul"
+                           class="nav-menu"
+                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+                           onClick="janelaMenu.selecionar(self)">
+                            <n:i class="metismenu-icon fa fa-leaf"/>
+                            <label id="" value="Especimes"/>
+                        </a>
+                    </n:li>
+                    <n:li>
+                        <a href="pessoa/index.zul"
+                           class="nav-menu"
+                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+                           onClick="janelaMenu.selecionar(self)">
+                            <n:i class="metismenu-icon fa fa-wifi"/>
+                            <label id="" value="Módulos"/>
+                        </a>
+                    </n:li>
+                    <n:li>
+                        <a href="/home/index.zul"
+                           class="nav-menu"
+                           w:onBind="jq(this).click(function(e) {e.preventDefault();})"
+                           onClick="janelaMenu.selecionar(self)">
+                            <n:i class="metismenu-icon fa fa-home"/>
+                            <label id="" value="Início"/>
+                        </a>
+                    </n:li>
+ 
+                </n:ul>
+            </div>
+        </div>
+
+    </window>
+</zk>

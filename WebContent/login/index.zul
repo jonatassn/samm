@@ -1,0 +1,40 @@
+<?page contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/css/archtectui.css"?>
+<?link rel="stylesheet" type="text/css" href="/css/zkbootstrap.css"?>
+<?link rel="stylesheet" type="text/css" href="/css/login.css"?>
+<zk>
+	<div class="w-100 h-100" viewModel="@id('vm') @init('br.com.jonatassn.samm.controller.LoginVM')" >
+			<div class="content">
+				<div class="left-login">
+					<image class="img-login" src="/img/login-birds.gif" />
+					<label value="fonte: " /><a href="https://storyset.com/nature">Nature illustrations by Storyset</a>
+				</div>
+				
+				<div class="right-login">
+					<div class="login-title">
+						<label class="" value="SAMM" />
+					</div>
+					<div class="login-form">
+						<label sclass="" value="@load(vm.msgErro)" visible="false" />
+						<textbox  class="login-input" value="@bind(vm.email)" type="text" placeholder="E-mail" constraint="no empty: Não pode ser vazio ou conter espaços" onChanging="@command('limpaErro')"/>
+						<textbox  class="login-input" value="@bind(vm.password)" type="password" placeholder="Senha" constraint="no empty: Não pode ser vazio" onChanging="@command('limpaErro')" />
+						<button width="145px" class="btn-primary btn-md" onClick="@command('entrar')" label="Entrar" />
+						<div class="esqueci-senha" align="center">
+							<a href="/" label="Esqueci minha senha" />
+						</div>
+					</div>
+					<div class="login-form-footer">
+						<div class="footer-samm">
+							
+							<label value="Jonatassn" />
+							<label value="© 2022 Sistema de Auxílio ao Módulo de Monitoramento " />
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		
+		
+	</div>
+</zk>

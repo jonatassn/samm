@@ -1,0 +1,59 @@
+<?page title="Usu�rios" contentType="text/html;charset=UTF-8"?>
+<?init class="br.com.jonatassn.samm.service.AuthenticationInit" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:n="native" >
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <n:i class="fa fa-users">
+                    </n:i>
+                </div>
+                <label value="Usuários" />
+            </div>
+        </div>
+    </div> 
+    <window viewModel="@id('vm') @init('br.com.jonatassn.samm.controller.usuario.UsuarioIndexVM')">
+    	<div class="d-flex justify-content-between">
+            <div class="form-group input-group col-sm-10 col-md-10 col-lg-8 pl-0">
+                <div class="input-group col-sm-4">
+                   <textbox value="@bind(vm.filtroBusca)" class="form-control"  placeholder="Digite a busca" onOK="@command('buscar')"/>       
+                    <div class="input-group-append">
+                        <button label="" class="btn btn-light" iconSclass="z-icon-search" onClick="@command('buscar')"  />
+                    </div>
+                </div>
+            </div> 
+            <div>
+                <button label="Novo" iconSclass="z-icon-plus" class="btn btn-sm btn-success" onClick="@command('novoUsuario')" />
+            </div>
+        </div>
+        
+        <div class="main-card mb-3 card no-shadow"> 
+            <div class="card-body"> 
+                <n:h5 class="card-title">Usuários Cadastrados</n:h5>
+                <div class="form-group form-group-mb-05"> 
+                    <grid model="@load(vm.usuarios)" mold="paging" height="750" pageSize="10" emptyMessage = "Nenhum usuário encontrado">
+                        <columns sizable="true">
+                            <column hflex="4" label="E-mail" sort="auto(email)" align="left" />
+                            <column hflex="2" label="Admin" sort="auto(nomeCompleto)" align="center" />
+                            <column hflex="3" label="Status" sort="auto(status)" align="center" />
+                            <column hflex="3" label="Ações" align="right" />
+                        </columns>
+                        <template name="model" var="usuario" >
+                            <row >
+                                <label value="@load(usuario.email)" />
+                                <label value="${ usuario.admin ? 'SIM' : 'NÃO' }" />
+                                <label value="${ usuario.status ? 'ATIVO' : 'INATIVO' }"/>
+                                <div>
+                                	<button sclass="btn btn-sm btn-info" iconSclass="z-icon-pencil"  tooltip="Editar" onClick="@command('editarUsuario', usuario=usuario)"/>
+                                	<button sclass="btn btn-sm btn-success" iconSclass="z-icon-check"  tooltip="Ativar" onClick="@command('ativarUsuario', usuario=usuario)" visible="${!usuario.status }"/>
+                                </div>
+                            </row>
+                        </template>
+                    </grid>         
+                </div>
+            </div>
+        </div> 
+    </window>     
+	
+</zk>
